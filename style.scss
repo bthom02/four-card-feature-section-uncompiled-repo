@@ -1,0 +1,230 @@
+// Variables
+    // Color Variables
+    $grey500: #4D4F62;
+    $grey400: #6A7178;
+    $white: #FFFFFF;
+    $bg-color: #FAFAFA;
+    $red: #EA5454;
+    $cyan: #44D3D2;
+    $blue: #549EF2;
+    $orange: #FCAE4A;
+    
+    // Typography Presets
+    $text-preset-1-mobile: 2.4rem/140% 'Poppins SemiBold';
+    $text-preset-1-desktop: 3.6rem/140% 'Poppins SemiBold';
+    $text-preset-2-mobile: 2.4rem/140% 'Poppins ExtraLight';
+    $text-preset-2-desktop: 3.6rem/140% 'Poppins ExtraLight';
+    $text-preset-3: 2.0rem/135% 'Poppins SemiBold';
+    $text-preset-4: 1.5rem/140% 'Poppins Regular';
+    $text-preset-5: 1.3rem/160% 'Poppins Regular';
+    $text-preset-1-2-spacing: 0.25px;
+    $text-preset-4-spacing: 0.1px;
+    $text-preset-5-spacing: 0.09px;
+
+    // Gap Presets
+    $gap700: 7.4rem;
+    $gap600: 6.0rem;
+    $gap500: 4.0rem;
+    $gap400: 3.2rem;
+    $gap300: 2.4rem;
+    $gap200: 1.6rem;
+    $gap100: 0.8rem;
+    $gap50: 0.6rem;
+
+
+@font-face {
+    font-family: 'Poppins ExtraLight';
+    src: url("./fonts/Poppins-ExtraLight.ttf");
+}
+
+@font-face {
+    font-family: 'Poppins Regular';
+    src: url("./fonts/Poppins-Regular.ttf");
+}
+
+@font-face {
+    font-family: 'Poppins SemiBold';
+    src: url("./fonts/Poppins-SemiBold.ttf");
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    width: 100%;
+    min-height: 100dvh;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    letter-spacing: 0;
+    gap: $gap600;
+    background-color: $bg-color;
+    color: $grey500;
+    padding: 40px;
+}
+
+.header-container {
+    width: clamp(316px, 85%, 400px);
+    height: auto; 
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: $gap200;
+}
+
+.header-tag-line {
+    font: $text-preset-2-mobile;
+    letter-spacing: $text-preset-1-2-spacing;
+}
+
+.header-title {
+    font: $text-preset-1-mobile;
+    letter-spacing: $text-preset-1-2-spacing;
+}
+
+.header-desc {
+    font: $text-preset-4;
+    letter-spacing: $text-preset-4-spacing;
+}
+
+.card-container {
+    width: auto;
+    height: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: $gap400;
+}
+
+.card {
+    width: clamp(316px, 85%, 400px);
+    height: 250px;
+    box-shadow: 0 15px 30px -11px #83A6D280;
+    border-radius: 8px;
+    padding: $gap400;
+    display: flex;
+    flex-direction: column;
+    gap: $gap400;
+
+    img:nth-last-of-type(1) {
+        margin: auto 0 15px auto;
+    }
+}
+
+.supervisor {
+    background: linear-gradient(to bottom, $cyan 4px, $white 4px);
+}
+
+.team-builder {
+    background: linear-gradient(to bottom, $red 4px, $white 4px);
+}
+
+.karma {
+    background: linear-gradient(to bottom, $orange 4px, $white 4px);
+}
+
+.calculator {
+    background: linear-gradient(to bottom, $blue 4px, $white 4px);
+}
+
+.card-text-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: $gap50;
+}
+
+.card-title {
+    font: $text-preset-3;
+}
+
+.card-desc {
+    font: $text-preset-5;
+    letter-spacing: $text-preset-5-spacing;
+}
+
+@media (min-width: 768px) {
+    body {
+        gap: $gap700;
+    }
+
+    .header-container {
+        width: 540px;
+    }
+
+    .header-tag-line {
+        font: $text-preset-2-desktop;
+    }
+
+    .header-title {
+        font: $text-preset-1-desktop;
+    }
+
+    .card-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+            "top top"
+            "left right"
+            "bottom bottom";
+    }
+
+    .card {
+        width: 316px;
+    }
+
+    .team-builder {
+        grid-area: top;
+        margin: 0 auto;
+    }
+
+    .supervisor {
+        grid-area: left;
+    }
+
+    .karma {
+        grid-area: right;
+    }
+
+    .calculator {
+        grid-area: bottom;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 1440px) {
+    .card-container {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: 
+            "left top right"
+            "left bottom right"
+    }
+
+    .card {
+        width: 350px;
+    }
+
+    .supervisor {
+        margin: auto 0;
+    }
+
+    .calculator {
+        grid-area: right;
+        margin: auto 0;
+    }
+
+    .karma {
+        grid-area: bottom;
+    }
+} 
