@@ -29,6 +29,10 @@ Users should be able to:
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
 - Live Site URL: [https://bthom02.github.io/four-card-feature-section-repo/](https://bthom02.github.io/four-card-feature-section-repo/)
 
+### Build step
+
+The style.scss file will need to be compiled to a style.css file in order to run, or to get the already compiled repo, go to [https://github.com/bthom02/four-card-feature-section-repo.git](https://github.com/bthom02/four-card-feature-section-repo.git)
+
 ## My process
 
 ### Built with
