@@ -116,10 +116,10 @@ body {
     display: flex;
     flex-direction: column;
     gap: $gap400;
+}
 
-    img:nth-last-of-type(1) {
-        margin: auto 0 15px auto;
-    }
+.img-bottom-right {
+    margin: auto 0 15px auto;
 }
 
 .supervisor {
@@ -157,7 +157,7 @@ body {
 @media (min-width: 768px) {
     body {
         gap: $gap700;
-        padding: none;
+        padding: 0;
     }
 
     .header-container {
@@ -209,7 +209,7 @@ body {
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-areas: 
             "left top right"
-            "left bottom right"
+            "left bottom right";
     }
 
     .card {
