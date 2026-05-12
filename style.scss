@@ -1,46 +1,56 @@
-
 // Variables
-    // Color variables
-    $black: #1C232B;
-    $grey: #6C7289;
-    $cream: #F2EAE2;
+    // Color Variables
+    $grey500: #4D4F62; // 7.7:1 contrast to bg-color
+    $grey400: #6A7178;
     $white: #FFFFFF;
-    $green500: #3D8168;
-    $green700: #1A4032;
+    $bg-color: #FAFAFA;
+    $red: #EA5454;
+    $cyan: #44D3D2;
+    $blue: #549EF2;
+    $orange: #FCAE4A;
+    
+    // Typography Presets
+    $text-preset-1-mobile: 2.4rem/140% 'Poppins SemiBold', sans-serif;
+    $text-preset-1-desktop: 3.6rem/140% 'Poppins SemiBold', sans-serif;
+    $text-preset-2-mobile: 2.4rem/140% 'Poppins ExtraLight', sans-serif;
+    $text-preset-2-desktop: 3.6rem/140% 'Poppins ExtraLight', sans-serif;
+    $text-preset-3: 2.0rem/135% 'Poppins SemiBold', sans-serif;
+    $text-preset-4: 1.5rem/140% 'Poppins Regular', sans-serif;
+    $text-preset-5: 1.3rem/160% 'Poppins Regular', sans-serif;
+    $text-preset-1-2-spacing: 0.25px;
+    $text-preset-4-spacing: 0.1px;
+    $text-preset-5-spacing: 0.09px;
 
-    // Typography presets
-    $text-preset-1: 700 3.2rem/100% 'Fraunces', sans-serif;
-    $text-preset-2: 700 1.4rem/110% 'Montserrat', sans-serif;
-    $text-preset-3: 500 1.4rem/160% 'Montserrat', sans-serif;
-    $text-preset-4: 500 1.2rem/120% 'Montserrat', sans-serif;
-    $text-preset-5: 500 1.3rem/120% 'Montserrat', sans-serif;
-    $text-preset-4-spacing: 5px;
-
-    // Gap variables
+    // Gap Presets
+    $gap700: 7.4rem;
+    $gap600: 6.0rem;
     $gap500: 4.0rem;
     $gap400: 3.2rem;
     $gap300: 2.4rem;
     $gap200: 1.6rem;
     $gap100: 0.8rem;
-    $gap50: 0.4rem;
+    $gap50: 0.6rem;
 
 
 @font-face {
-    font-family: 'Fraunces';
-    src: url("./fonts/Fraunces-VariableFont_SOFT,WONK,opsz,wght.ttf") format("truetype");
-    font-weight: 100 900;
+    font-family: 'Poppins ExtraLight';
+    src: url("./fonts/Poppins-ExtraLight.ttf");
 }
 
 @font-face {
-    font-family: 'Montserrat';
-    src: url("./fonts/Montserrat-VariableFont_wght.ttf") format("truetype");
-    font-weight: 100 900;
+    font-family: 'Poppins Regular';
+    src: url("./fonts/Poppins-Regular.ttf");
+}
+
+@font-face {
+    font-family: 'Poppins SemiBold';
+    src: url("./fonts/Poppins-SemiBold.ttf");
 }
 
 * {
     box-sizing: border-box;
-    padding: 0;
     margin: 0;
+    padding: 0;
 }
 
 html {
@@ -52,160 +62,170 @@ body {
     min-height: 100dvh;
     height: auto;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: $cream;
+    flex-direction: column;
     letter-spacing: 0;
+    gap: $gap600;
+    background-color: $bg-color;
+    color: $grey500;
+    padding: $gap500;
 }
 
-.card-container {
-    width: clamp(325px, 93%, 500px);
-    height: auto;
-    background-color: $white;
-    border-radius: 8px;
-}
-
-.image-container {
-    width: 100%;
-    height: auto;
-    border-radius: 8px 8px 0 0;
-    overflow: hidden;
-}
-
-.img-mobile {
-    display: block;
-    width: 100%;
-}
-
-.img-desktop {
-    display: none;
-}
-
-@mixin setup-container {
-    width: 100%;
-    height: auto;
+.header-container {
+    width: clamp(316px, 85%, 400px);
+    height: auto; 
+    text-align: center;
     display: flex;
     flex-direction: column;
-    gap: $gap300;
-}
-
-.card-content-container {
-    @include setup-container;
-    padding: $gap400;
-}
-
-.card-text-container {
-    @include setup-container;
-}
-
-.product-category {
-    font: $text-preset-4;
-    letter-spacing: $text-preset-4-spacing;
-    color: $grey;
-    text-transform: uppercase;
-}
-
-.product-title {
-    font: $text-preset-1;
-    color: $black;
-}
-
-.product-desc {
-    font: $text-preset-3;
-    color: $grey;
-}
-
-.card-pricing-container {
-    width: 100%;
-    display: flex;
+    justify-content: center;
     align-items: center;
     gap: $gap200;
 }
 
-.product-price-big {
-    font: $text-preset-1;
-    color: $green500;
+.header-tag-line {
+    font: $text-preset-2-mobile;
+    letter-spacing: $text-preset-1-2-spacing;
 }
 
-.product-price-small {
-    font: $text-preset-5;
-    color: $grey;
-    text-decoration:  line-through;
+.header-title {
+    font: $text-preset-1-mobile;
+    letter-spacing: $text-preset-1-2-spacing;
 }
 
-.btn {
-    background-color: $green500;
-    color: $white;
-    width: 100%;
+.header-desc {
+    font: $text-preset-4;
+    letter-spacing: $text-preset-4-spacing;
+}
+
+.card-container {
+    width: auto;
     height: auto;
-    padding: $gap200 $gap400;
-    border-radius: 8px;
-    border: none;
-    font: $text-preset-2;
     display: flex;
-    justify-content: center;
     align-items: center;
-    gap: $gap100;
+    flex-direction: column;
+    gap: $gap400;
+}
 
-    img {
-        transform: translateY(-1px);
-    }
+.card {
+    width: clamp(316px, 85%, 400px);
+    min-height: 250px;
+    box-shadow: 0 15px 30px -11px #83A6D280;
+    border-radius: 8px;
+    padding: $gap400;
+    display: flex;
+    flex-direction: column;
+    gap: $gap400;
 
-    &:focus-visible {
-        background-color: $green700;
-        transition: background-color 0.05s ease-in;
-        outline: 4px dashed black;
-        outline-offset: 2px;
+    img:nth-last-of-type(1) {
+        margin: auto 0 15px auto;
     }
 }
 
+.supervisor {
+    background: linear-gradient(to bottom, $cyan 4px, $white 4px);
+}
+
+.team-builder {
+    background: linear-gradient(to bottom, $red 4px, $white 4px);
+}
+
+.karma {
+    background: linear-gradient(to bottom, $orange 4px, $white 4px);
+}
+
+.calculator {
+    background: linear-gradient(to bottom, $blue 4px, $white 4px);
+}
+
+.card-text-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: $gap50;
+}
+
+.card-title {
+    font: $text-preset-3;
+}
+
+.card-desc {
+    font: $text-preset-5;
+    letter-spacing: $text-preset-5-spacing;
+}
 
 @media (min-width: 768px) {
-    html {
-        font-size: clamp(62.5%, 1.3vw, 0.8rem);
+    body {
+        gap: $gap700;
+        padding: none;
+    }
+
+    .header-container {
+        width: 540px;
+    }
+
+    .header-tag-line {
+        font: $text-preset-2-desktop;
+    }
+
+    .header-title {
+        font: $text-preset-1-desktop;
     }
 
     .card-container {
-        width: clamp(550px, 80%, 800px);
-        display: flex;
-        flex-direction: row;
-        align-items: center;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+            "top top"
+            "left right"
+            "bottom bottom";
     }
 
-    .image-container {
-        width: 50%;
-        height: 100%;
-        border-radius: 8px 0 0 8px;
-        overflow: hidden;
+    .card {
+        width: 316px;
     }
 
-    .img-mobile {
-        display: none;
+    .team-builder {
+        grid-area: top;
+        margin: 0 auto;
     }
 
-    .img-desktop {
-        display: block;
-        width: 100%;
-        height: auto;
-        border-radius: 8px 0 0 8px;
+    .supervisor {
+        grid-area: left;
     }
 
-    .card-content-container {
-        gap: $gap400;
-        padding: $gap400;
-        width: 50%;
-    }  
+    .karma {
+        grid-area: right;
+    }
+
+    .calculator {
+        grid-area: bottom;
+        margin: 0 auto;
+    }
 }
 
 @media (min-width: 1440px) {
-    .btn {
-        transition: background-color 0.3s ease-out;
-
-        &:hover {
-            background-color: $green700;
-            transition: background-color 0.05s ease-in;
-        }
+    .card-container {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: 
+            "left top right"
+            "left bottom right"
     }
-}
-    
+
+    .card {
+        width: 350px;
+    }
+
+    .supervisor {
+        margin: auto 0;
+    }
+
+    .calculator {
+        grid-area: right;
+        margin: auto 0;
+    }
+
+    .karma {
+        grid-area: bottom;
+    }
+} 

@@ -5,36 +5,57 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="style.css" type="text/css">
   
-  <title>Frontend Mentor | Product preview card component</title>
+  <title>Frontend Mentor | Four card feature section</title>
 </head>
 <body>
-  <main class="card-container">
-    <div class="image-container">
-      <img class="img-mobile" src="./images/image-product-mobile.jpg" alt="Gabrielle Essence Eau De Parfum">
-      <img class="img-desktop" src="./images/image-product-desktop.jpg" alt="Gabrielle Essence Eau De Parfum">
+  <header class="header-container">
+    <div class="title-wrapper">
+      <p class="header-tag-line">Reliable, efficient delivery</p>
+      <h1 class="header-title">Powered by Technology</h1>
     </div>
 
-    <section class="card-content-container">
-      <section class="card-text-container">
-        <p class="product-category">Perfume</p>
+    <p class="header-desc">Our Artificial Intelligence powered tools use millions of project data points 
+    to ensure that your project is successful</p>
+  </header>
 
-        <h1 class="product-title">Gabrielle Essence Eau De Parfum</h1>
-
-        <p class="product-desc">A floral, solar and voluptuous interpretation composed by Olivier Polge, 
-        Perfumer-Creator for the House of CHANEL.</p>
-      </section>
-
-      <div class="card-pricing-container">
-        <p class="product-price-big">$149.99</p>
-        <p class="product-price-small">$169.99</p>
+  <main class="card-container">
+    <section class="card supervisor">
+      <div class="card-text-container">
+        <h2 class="card-title">Supervisor</h2>
+        <p class="card-desc">Monitors activity to identify project roadblocks</p>
       </div>
 
-      <button class="btn" id="add-to-cart-btn" type="button"><img src="./images/icon-cart.svg" alt="" aria-hidden="true"> Add to Cart</button>
+      <img src="./images/icon-supervisor.svg" alt="">
+    </section>
+
+    <section class="card team-builder">
+      <div class="card-text-container">
+        <h2 class="card-title">Team Builder</h2>
+        <p class="card-desc">Scans our talent network to create the optimal team for your project</p>
+      </div>
+      
+      <img src="./images/icon-team-builder.svg" alt="">
+    </section>
+
+    <section class="card karma">
+      <div class="card-text-container">
+        <h2 class="card-title">Karma</h2>
+        <p class="card-desc">Regularly evaluates our talent to ensure quality</p>
+      </div>
+      
+      <img src="./images/icon-karma.svg" alt="">
+    </section>
+
+    <section class="card calculator">
+      <div class="card-text-container">
+        <h2 class="card-title">Calculator</h2>
+        <p class="card-desc">Uses data from past projects to provide better delivery estimates</p>
+      </div>
+      
+      <img src="./images/icon-calculator.svg" alt="">
     </section>
   </main>
-
-  <script src="script.js"></script>
 </body>
 </html>
